@@ -49,6 +49,7 @@ export const ViewPage: React.FC = () => {
   const [selectedTool, setSelectedTool] = useState('pencil');
   const [gridSize, setGridSize] = useState(20);
   const [baseResolution, setBaseResolution] = useState({ width: 1920, height: 1080 });
+  const [eraserWidth, setEraserWidth] = useState(24);
 
   useEffect(() => {
     const savedState = loadBoardState();
@@ -92,6 +93,8 @@ export const ViewPage: React.FC = () => {
           drawingWidth={2}
           onColorChange={() => {}}
           onWidthChange={() => {}}
+          eraserWidth={eraserWidth}
+          onEraserWidthChange={setEraserWidth}
           gridSize={gridSize}
           onGridSizeChange={setGridSize}
           baseResolution={baseResolution}
@@ -107,6 +110,7 @@ export const ViewPage: React.FC = () => {
           onObjectSelect={() => {}}
           gridSize={gridSize}
           baseResolution={baseResolution}
+          eraserWidth={eraserWidth}
         />
       </CanvasWrapper>
     </PageContainer>
